@@ -46,6 +46,23 @@ $(document).ready(function() {
       nextArrow: '<button type="button" class="slick-next"></button>'
     });
     // masonry
+    //RWD MENU Start
+    var body = $('body');
+    var menuTrigger = $('.js-menu-trigger');
+    var mainOverlay = $('.js-main-overlay');
+
+    menuTrigger.on('click', function(){
+      body.addClass('menu-is-active');
+    });
+
+    $('.menu li a').on('click', function(){
+      $('body').removeClass("menu-is-active");
+    });
+
+    mainOverlay.on('click', function(){
+      $('body').removeClass("menu-is-active");
+    });
+
     var $container = $('#grid').imagesLoaded(function(){
       $container.masonry({
         itemSelector: '.grid-item',　//タイトル状に配置する要素のclassの指定
@@ -55,6 +72,10 @@ $(document).ready(function() {
         gutter: 10
       });
     });
+
+
+
+
 
     new AnimOnScroll( document.getElementById('grid'), {
       minDuration : 0.4,
