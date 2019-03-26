@@ -13,7 +13,7 @@
     <!--<meta property="og:description" content="" />-->
     <title>Start Project</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Ubuntu:400,500,700|Noto+Sans+JP:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -42,7 +42,11 @@
             <li><a href="#footer">Footer</a></li>
           </ul>
 
-          <ul class="menu-2"></ul>
+          <ul class="menu-sns">
+            <li class="sns"><a href="#"><img src="images/facebook-logo-button.png" alt=""></a></li>
+            <li class="sns"><a href="#"><img src="images/twitter-logo-button.png" alt=""></a></li>
+            <li class="sns"><a href="#"><img src="images/instagram.png" alt=""></a></li>
+          </ul>
         </nav>
 
         <div class="menu-trigger js-menu-trigger"></div>
@@ -61,7 +65,7 @@
                   <li class="layer name" data-depth="0.30">CLEO HSU</li>
                   <li class="layer title" data-depth="0.50">Web Designer?</li>
                   <li class="layer btn btn-main" data-depth="0.50">
-                      <a href="#" class="portfolio-btn">View Portfolio</a>
+                      <a href="http://www.dungeonsanddevelopers.com/#_a2b2dfhrst_17_Cleo" class="portfolio-btn" target="_blank">View Skill Tree</a>
                       <a href="mailto:kayahino@gmail.com" class="contact-btn">Contact Me</a>
                   </li>
               </ul>
@@ -80,8 +84,8 @@
               </div>
               <div class="grid-item"><img src="images/IMG_2097.jpg" alt=""></div>
               <div class="grid-item"><img src="images/two.jpg" alt=""></div>
-              <div class="grid-item tall-img"><img src="images/tall-img-1.jpg" alt=""></div>
               <div class="grid-item"><img src="images/four.jpg" alt=""></div>
+              <div class="grid-item"><img src="images/IMG_2547.jpg" alt=""></div>
               <div class="grid-item"><img src="images/200.jpg" alt=""></div>
               <div class="grid-item tall-img" ><img src="images/tall-img-2.jpg" alt="">
                 <div class="pater-content">
@@ -90,14 +94,7 @@
               </div>
               <div class="grid-item"><img src="images/five.jpg" alt=""></div>
               <div class="grid-item"><img src="images/six.jpg" alt=""></div>
-              <div class="grid-item"><img src="images/IMG_0072-1.jpg" alt=""></div>
               <div class="grid-item"><img src="images/three.jpg" alt=""></div>
-              <div class="grid-item"><img src="images/seven.jpg" alt=""></div>
-              <div class="grid-item"><img src="images/IMG_2547.jpg" alt=""></div>
-              <div class="grid-item"><img src="images/eight.jpg" alt=""></div>
-              <div class="grid-item"><img src="images/nine.jpg" alt=""></div>
-              <div class="grid-item"><img src="images/ten.jpg" alt=""></div>
-              <div class="grid-item"><img src="images/eleven.jpg" alt=""></div>
             </div>
 
         </section>
@@ -105,7 +102,14 @@
         <section class="beating-heart" id="about">
             <div class="wrapper aboutme">
                 <h2 class="sub-title">About Me</h2>
-                <div class="p-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore qui mollitia quia neque ipsam officiis fugit non, optio ea atque? Natus commodi hic laborum dicta molestias autem necessitatibus delectus at! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore qui mollitia quia neque ipsam officiis fugit non, optio ea atque?</div>
+
+                <div class="photo"><img src="images/IMG_4583.jpg" alt=""></div>
+                <div class="p-content">
+                  中央大學法語系畢業。熱愛語言與設計。<br>
+                  正在自我進修 Web Design技能，<br>
+　                目標成為能獨當一面的前端設計師。
+
+                </div>
                 <span>I
                 <svg class="heart" viewBox="0 0 200 200">
                 <path class="st0" d="M182.86,28.66c-20.78-20.78-54.48-20.78-75.26,0c-3.01,3.01-5.53,6.31-7.66,9.78c-2.1-3.37-4.6-6.56-7.53-9.49
@@ -131,7 +135,10 @@
 
 
         <footer id="footer">
-            <h1>Copyright (c) Udemy Filip Kordanovski</h1>
+            <div class="footer">
+            <span>Made by CLEO 2019</span><br>
+            <span class="credit">Based on Udemy Filip Kordanovski</span><br>
+          </div>
         </footer>
 
         <div id="totop">
@@ -153,6 +160,11 @@
 
       var scene = document.getElementById('scene');
       var parallax = new Parallax(scene);
+
+      $('.wrapper, .title, .btn').hide().css({transform: "translateY(-3%)"});
+      $('.wrapper, .title, .btn').each(function(i){
+      $(this).delay(i*1200).fadeIn(1200);
+      });
 
     </script>
 
