@@ -361,6 +361,7 @@ div.wrapper {
   max-width: 1100px;
   width: 90%;
   margin: 0 auto;
+  display: none;
 }
 
 
@@ -466,6 +467,7 @@ h2.sub-title:hover::after {
 
   -webkit-animation: into 2.5s;
           animation: into 2.5s;
+  margin-bottom: 50px;
 }
 
 .grid {
@@ -562,7 +564,7 @@ h2.sub-title:hover::after {
 
 section.beating-heart {
   height: 100vh;
-  padding: 50px 10px;
+  padding: 0px 10px;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -578,11 +580,32 @@ section.beating-heart {
   text-align: center;
 }
 
+.photo {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  overflow: hidden;
+}
+
+section.beating-heart .wrapper {
+}
+
+.photo img{
+  width: 150px;
+  border-radius: 2em;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
 .p-content {
-  text-align: justify;
+  text-align: center;
   font-size: 1.2em;
-  line-height: 150%;
+  line-height: 180%;
   padding-bottom: 40px;
+  font-family: 'Noto Sans JP';
+  font-weight: 400;
 }
 
 .aboutme {
@@ -752,9 +775,9 @@ footer {
   text-align: center;
 }
 
-footer h1 {
+div.footer {
   position: fixed;
-  bottom: 60px;
+  bottom: 50px;
   left: 50%;
   width: 800px;
   -webkit-transform: translate(-50%);
@@ -762,9 +785,15 @@ footer h1 {
   font-size: 20px;
   line-height: 25px;
   color: #fff;
-  font-weight: 500;
   text-align: center;
+  font-family: 'Ubuntu';
+  letter-spacing: 1px;
 }
+
+span.credit {
+  font-size: 0.8em;
+}
+
 
 
 div#totop {
@@ -854,7 +883,7 @@ z-index: 11;
     left: 0;
     background: #131313;
     width: 100%;
-    max-width: 50vw;
+    max-width: 40vw;
     z-index: 30;
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0);
@@ -874,6 +903,7 @@ z-index: 11;
   nav.nav-wrapper ul li a {
     font-size: 14px;
     line-height: 20px;
+    display:block;
   }
 
   nav.nav-wrapper ul li a:hover {
@@ -912,7 +942,7 @@ z-index: 11;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 50vw;
+    width: 40vw;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -921,7 +951,8 @@ z-index: 11;
     -webkit-transition: 0.4s;
             transition: 0.4s;
     overflow:hidden;
-    background: rgba(255,255,255,0.8);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0, 0.3)), color-stop(90%, rgba(255,255,255, 0.8)));
+    background: linear-gradient(90deg, rgba(0,0,0, 0.3), rgba(255,255,255, 0.8) 90%);
     padding-right: 20px;
   }
 
@@ -993,12 +1024,22 @@ z-index: 11;
     height: initial;
   }
 
+  section.beating-heart .wrapper {
+    padding-bottom:20px;
+  }
+
+
   section.beating-heart span {
     line-height: 40px;
     font-weight: 700;
   }
+
+  .photo img {
+    width: 120px;
+  }
+
   .p-content {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   .heart {
@@ -1009,10 +1050,14 @@ z-index: 11;
     height: 60px;
   }
 
-  footer h1{
+  div.footer {
     font-size: 0.9em;
     line-height: 1em;
-    bottom: 25px;
+    bottom: 15px;
+  }
+
+  span.credit {
+    font-size: 0.6em;
   }
 
   .grid-sizer, .grid-item {
@@ -1023,9 +1068,22 @@ z-index: 11;
     width: 80vw;
   }
 
+  ul.menu {
+    max-width: 70vw;
+  }
+
+  ul.menu-sns {
+    width: 70vw;
+  }
+
+  li.sns img {
+    max-width: 30px;
+    max-height: 30px;
+  }
+
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 380px) {
   h2.sub-title {
     font-size: 1.2em;
   }
@@ -1042,5 +1100,13 @@ z-index: 11;
 
   svg.heart {
     width: 30px;
+  }
+
+  .photo img {
+    width: 100px;
+  }
+
+  .p-content {
+    font-size: 0.9em;
   }
 }
