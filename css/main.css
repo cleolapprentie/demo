@@ -228,7 +228,57 @@ ol li {
     opacity: 1;
   }
 }
+
+
+@-webkit-keyframes into {
+  0% {
+    -webkit-transform: translateY(3%);
+            transform: translateY(3%);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  35% {
+    -webkit-transform: translateY(3%);
+            transform: translateY(3%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+
+@keyframes into {
+  0% {
+    -webkit-transform: translateY(3%);
+            transform: translateY(3%);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  35% {
+    -webkit-transform: translateY(3%);
+            transform: translateY(3%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 /* NAVIGATION BAR STYLE START */
+
 
 header {
   background-color: transparent;
@@ -294,6 +344,10 @@ ul.menu {
 .menu li a:hover {
   border-bottom: 1px solid #FFF;
 }
+
+  ul.menu-sns { display: none; }
+
+
 /*
 nav.nav-wrapper ul li {
   display: inline-block; /* display: inline-flex;
@@ -409,6 +463,9 @@ h2.sub-title:hover::after {
 /* MASONRY JS STYLES START */
 
 .masonry-grid {
+
+  -webkit-animation: into 2.5s;
+          animation: into 2.5s;
 }
 
 .grid {
@@ -843,6 +900,54 @@ z-index: 11;
 
   .totop::after { display: none; }
   .totop { width: 2rem; height: 2rem; border-radius: 999em;}
+
+
+  ul.menu-sns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    -webkit-transition: 0.4s;
+            transition: 0.4s;
+    overflow:hidden;
+    background: rgba(255,255,255,0.8);
+    padding-right: 20px;
+  }
+
+  ul.menu-sns li.sns {
+    padding: 0px 0px 0px 15px;
+  }
+
+  li.sns img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  body.menu-is-active ul.menu-sns {
+    -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+    z-index: 31;
+
+  }
+
+  ul.menu-sns li.sns {
+    display: inline-block;
+    border: none;
+  }
+
+
+
 }
 
 
