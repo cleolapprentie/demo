@@ -43,7 +43,23 @@ $(document).ready(function() {
       slidesToScroll: 1,
       arrows: true,
       prevArrow: '<button type="button" class="slick-prev"></button>',
-      nextArrow: '<button type="button" class="slick-next"></button>'
+      nextArrow: '<button type="button" class="slick-next"></button>',
+
+      responsive: [
+        {
+            breakpoint: 990,
+            settings: {
+                slidesToShow: 2
+            }
+        },
+
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1
+            }
+        }
+      ]
     });
     // masonry
     //RWD MENU Start
@@ -68,7 +84,7 @@ $(document).ready(function() {
         itemSelector: '.grid-item',　//タイトル状に配置する要素のclassの指定
         isAnimated: true,
         isFitWidth: true,
-        columnWidth: 350,
+        columnWidth: '.grid-sizer',
         gutter: 10
       });
     });
