@@ -112,6 +112,8 @@ section {
     display: block;
 }
 
+input, button { border:none; }
+
 html, body {
     line-height: 1;
     font-family: 'Montserrat', sans-serif;
@@ -277,6 +279,52 @@ ol li {
   }
 }
 
+@-webkit-keyframes into_2 {
+  0% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  35% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes into_2 {
+  0% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  35% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-19%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 /* NAVIGATION BAR STYLE START */
 
 
@@ -361,7 +409,6 @@ div.wrapper {
   max-width: 1100px;
   width: 90%;
   margin: 0 auto;
-  display: none;
 }
 
 
@@ -375,10 +422,14 @@ div.wrapper {
   height: 400px;
 }
 
+.wrapper {
+  -webkit-animation: into_2 4s;
+          animation: into_2 4s;
+}
+
 ul#scene {
   margin-top: 100px;
   height: 100%;
-
 }
 
 ul#scene li.name {
@@ -389,7 +440,6 @@ ul#scene li.name {
   text-transform: uppercase;
   color: #fff;
   width: 100%;
-
 }
 
 ul#scene li.title {
@@ -418,12 +468,38 @@ ul#scene li.title {
   color: #fff;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+  position: relative;
 }
+
+.portfolio-btn::after,
+.contact-btn::after {
+  position: absolute;
+  top: 0px; left: 0px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  z-index: -1;
+  -webkit-transform: scale(.3);
+          transform: scale(.3);
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  background: rgba(255, 255, 255,0);
+}
+
+.portfolio-btn:hover::after,
+.contact-btn:hover::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background: rgba(255, 255, 255,1);
+
+}
+
 
 .portfolio-btn:hover,
 .contact-btn:hover {
-  background: white;
-  color: black;
+  color: #000;
 }
 
 .portfolio-btn {
@@ -606,6 +682,7 @@ section.beating-heart .wrapper {
   padding-bottom: 40px;
   font-family: 'Noto Sans JP';
   font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .aboutme {
