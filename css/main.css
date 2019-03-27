@@ -1125,7 +1125,7 @@ z-index: 11;
   }
 
   .p-content {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 
   .heart {
@@ -1193,6 +1193,12 @@ z-index: 11;
   }
 
   .p-content {
-    font-size: 0.9em;
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .p-content {
+    font-size: 0.8em;
   }
 }
