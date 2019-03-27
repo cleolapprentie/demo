@@ -281,8 +281,8 @@ ol li {
 
 @-webkit-keyframes into_2 {
   0% {
-    -webkit-transform: translateY(-10%);
-            transform: translateY(-10%);
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
     opacity: 0;
   }
 
@@ -291,8 +291,9 @@ ol li {
   }
 
   35% {
-    -webkit-transform: translateY(-10%);
-            transform: translateY(-10%);
+    visibility: visible;
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
   }
 
   100% {
@@ -304,8 +305,8 @@ ol li {
 
 @keyframes into_2 {
   0% {
-    -webkit-transform: translateY(-10%);
-            transform: translateY(-10%);
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
     opacity: 0;
   }
 
@@ -314,8 +315,8 @@ ol li {
   }
 
   35% {
-    -webkit-transform: translateY(-10%);
-            transform: translateY(-19%);
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
   }
 
   100% {
@@ -351,6 +352,8 @@ body.scroll header.sticky {
     -webkit-transform: translateY(0);
             transform: translateY(0);
 }
+
+
 
 .nav-wrapper {
   max-width: 100%;
@@ -423,8 +426,6 @@ div.wrapper {
 }
 
 .wrapper {
-  -webkit-animation: into_2 4s;
-          animation: into_2 4s;
 }
 
 ul#scene {
@@ -440,6 +441,8 @@ ul#scene li.name {
   text-transform: uppercase;
   color: #fff;
   width: 100%;
+  -webkit-animation: into_2 3s;
+          animation: into_2 3s;
 }
 
 ul#scene li.title {
@@ -450,6 +453,8 @@ ul#scene li.title {
   width: 100%;
   margin-top: 60px;
   letter-spacing: 5px;
+  -webkit-animation: into_2 3s;
+          animation: into_2 3s;
 }
 
 .btn {
@@ -457,6 +462,8 @@ ul#scene li.title {
   width: 100%;
   text-align: center;
   display: inline-block;
+  -webkit-animation: into_2 3s;
+          animation: into_2 3s;
 }
 
 .portfolio-btn,
@@ -545,6 +552,7 @@ h2.sub-title:hover::after {
           animation: into 2.5s;
   margin-bottom: 50px;
 }
+
 
 .grid {
   margin: 0 auto;
@@ -876,6 +884,7 @@ span.credit {
 div#totop {
   position: fixed;
   right: 1rem; bottom: 1rem;
+  display: none;
 }
 
 .totop{
