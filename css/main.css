@@ -343,15 +343,18 @@ header.sticky {
   background: rgba(0, 0, 0, 0.8);
   -webkit-transform: translateY(-200%);
           transform: translateY(-200%);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 2s;
+  transition: 2s;
   z-index: 5;
 }
 
 body.scroll header.sticky {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+          -webkit-transition: 1s;
+          transition: 1s;
 }
+
 
 
 
