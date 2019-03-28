@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
+    //Sticky Header
     var $header = $('header');
     var $sticky = $header.before($header.clone().addClass('sticky'));
 
-    //SMOOTH scroll
-
+    //Smooth Scrolling
     $('.menu li a[href^="#"]').on('click', function(e){
         e.preventDefault();
 
@@ -17,54 +17,56 @@ $(document).ready(function() {
         }
     });
 
-
+    //Page to Top
     $(window).on('scroll', function(){
 
-       $('body').toggleClass('scroll', ($scrollFromTop > 120));    //Sticky Header
 
-      //Page to Top
       var $scrollFromTop = $(window).scrollTop();
+
+      $('body').toggleClass('scroll', ($scrollFromTop > 120));
+
       if ($scrollFromTop > 400){
         $('#totop').fadeIn(500);
       } else {
-        $('#totop').stop().fadeOut(400);
+        $('#totop').stop().fadeOut(500);
       }
     });
 
     $('#totop').on('click', function(){
-        $('html,body').animate({scrollTop:0}, 600);
+        $('html,body').animate({scrollTop:0}, 500);
     });
 
-
-
+    //Auto Slide Show
     $('.slider').slick({
-        autoplay: true,
-        autoplaySpeed:1500,
-        arrows: true,
-        dots: false,
-        centerMode: false,
-        slidesToShow: 3,
-        fade:false,
-        prevArrow:'<button type="button" class="slick-prev">Previous</button>',
-        nextArrow:'<button type="button" class="slick-next">Previous</button>',
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      dots: false,
+      centerMode: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      prevArrow: '<button type="button" class="slick-prev"></button>',
+      nextArrow: '<button type="button" class="slick-next"></button>',
 
-        responsive: [
-          {
-              breakpoint: 990,
-              settings: {
-                  slidesToShow: 2
-              }
-          },
-          {
-              breakpoint: 768,
-              settings: {
-                  slidesToShow: 1
-              }
-          }
-        ]
+      responsive: [
+        {
+            breakpoint: 990,
+            settings: {
+                slidesToShow: 2
+            }
+        },
+
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1
+            }
+        }
+      ]
     });
-    // masonry
-    //RWD MENU Start
+
+    //RWD MENU Trigger
     var body = $('body');
     var menuTrigger = $('.js-menu-trigger');
     var mainOverlay = $('.js-main-overlay');
@@ -81,7 +83,7 @@ $(document).ready(function() {
       $('body').removeClass("menu-is-active");
     });
 
-
+    // Masonry
     var $container = $('#grid').imagesLoaded(function(){
 
       $container.masonry({
@@ -94,34 +96,33 @@ $(document).ready(function() {
 
     });
 
-
+    //Animation on Scrolling - Grid Images
     new AnimOnScroll( document.getElementById('grid'), {
       minDuration : 0.4,
       maxDuration : 0.7,
       viewportFactor : 0.2
     });
 
+
+    //Animation on Scrolling - Content
     $(window).on('load scroll', function() {
-        add_class_in_scrolling($('.aboutme'));
-
+      add_class_in_scrolling($('.aboutme'));
     });
-// スクロールで要素が表示された時にclassを付与する
-    function add_class_in_scrolling(target) {
-        var winScroll = $(window).scrollTop();
-        var winHeight = $(window).height();
-        var scrollPos = winScroll + winHeight;
-        var slidein = scrollPos - target.height() / 2;
+    function add_class_in_scrolling(target) {    // スクロールで要素が表示された時にclassを付与する
 
-        if( slidein > target.offset().top ) {
+      var winScroll = $(window).scrollTop();
+      var winHeight = $(window).height();
+      var scrollPos = winScroll + winHeight;
+      var slidein = scrollPos - target.height() / 2;
 
-            target.addClass('active');
-        }
+      if( slidein > target.offset().top ) {
 
-        else {
-          target.removeClass('active');
-        }
+        target.addClass('active');
+      }
+
+      else {
+        target.removeClass('active');
+      }
     }
-
-
 
 });
